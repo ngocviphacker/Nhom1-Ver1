@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ - Thư viện</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>📚 Thư viện trực tuyến</h1>
+    <nav>
+      <a href="#">Trang chủ</a>
+      <a href="#">Sách</a>
+      <a href="#">Độc giả</a>
+      <a href="#">Mượn/Trả</a>
+      <span id="welcomeUser"></span>
+      <a href="#" onclick="logout()" class="logout">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h2>Chào mừng đến với thư viện trực tuyến</h2>
+    <p>Bạn có thể tra cứu và mượn sách dễ dàng ngay tại đây 📖</p>
+  </section>
+
+  <!-- Thanh tìm kiếm -->
+  <section class="search">
+    <input type="text" id="searchInput" placeholder="Nhập tên sách hoặc tác giả...">
+    <button onclick="searchBook()">Tìm kiếm</button>
+  </section>
+
+  <!-- Sách nổi bật -->
+  <section class="books">
+    <h2>📖 Danh sách Sách</h2>
+    <div class="book-list" id="bookList">
+      <div class="book-card">
+        <h3>Lập trình Python</h3>
+        <p>Tác giả: Nguyễn Văn A</p>
+        <button>Xem chi tiết</button>
+      </div>
+      <div class="book-card">
+        <h3>HTML & CSS cơ bản</h3>
+        <p>Tác giả: Trần Thị B</p>
+        <button>Xem chi tiết</button>
+      </div>
+      <div class="book-card">
+        <h3>JavaScript cho người mới</h3>
+        <p>Tác giả: Lê Văn C</p>
+        <button>Xem chi tiết</button>
+      </div>
+      <div class="book-card">
+        <h3>Cơ sở dữ liệu SQL</h3>
+        <p>Tác giả: Phạm Văn D</p>
+        <button>Xem chi tiết</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Thư viện trực tuyến | Thiết kế bởi Bạn</p>
+  </footer>
+
+  <script>
+    // Hiển thị user hiện tại
+    let currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+      document.getElementById("welcomeUser").textContent = "Xin chào, " + currentUser;
+    }
+
+    function logout() {
+      localStorage.removeItem("currentUser");
+      window.location.href = "login.html";
+    }
+
+    // Hàm tìm kiếm sách
+    function searchBook() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let books = document.getElementsByClassName("book-card");
+
+      for (let i = 0; i < books.length; i++) {
+        let title = books[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+        let author = books[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+
+        if (title.includes(input) || author.includes(input)) {
+          books[i].style.display = "block";
+        } else {
+          books[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

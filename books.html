@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý Sách</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>📚 Quản lý Sách</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="books.html" class="active">Sách</a>
+      <a href="readers.html">Độc giả</a>
+      <a href="borrow.html">Mượn/Trả</a>
+      <a href="login.html" class="logout">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Danh sách Sách</h2>
+
+    <!-- Form thêm/sửa sách -->
+    <form id="bookForm">
+      <input type="hidden" id="bookId">
+      <input type="text" id="title" placeholder="Tên sách" required>
+      <input type="text" id="author" placeholder="Tác giả" required>
+      <input type="number" id="year" placeholder="Năm xuất bản" required>
+      <button type="submit">Lưu</button>
+    </form>
+
+    <!-- Bảng hiển thị sách -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên sách</th>
+          <th>Tác giả</th>
+          <th>Năm</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="bookTable"></tbody>
+    </table>
+  </main>
+
+  <script src="books.js"></script>
+</body>
+</html>

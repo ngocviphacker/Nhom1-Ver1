@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="register.js" defer></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>📝 Đăng ký</h2>
+    <form onsubmit="return register(event)">
+      <input type="text" id="newUsername" placeholder="Tên đăng nhập" required>
+      <input type="password" id="newPassword" placeholder="Mật khẩu" required>
+      <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+      <button type="submit">Đăng ký</button>
+      <p>Bạn đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>🔑 Đăng nhập</h2>
+    <form onsubmit="return login(event)">
+      <input type="text" id="username" placeholder="Tên đăng nhập" required>
+      <input type="password" id="password" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng nhập</button>
+      <p>Bạn chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+    </form>
+  </div>
+</body>
+</html>
